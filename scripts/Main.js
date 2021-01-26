@@ -11,6 +11,7 @@ function replace() {
 		let imgUrl = images[i].src.startsWith("data") ? "" : images[i].src.toLocaleLowerCase();
 		if (new RegExp(terms.join("|")).test(alt) || new RegExp(terms.join("|")).test(imgUrl)) {
 			images[i].src = url;
+			images[i].srcset = url;
 		}
 	}
 }
