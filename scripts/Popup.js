@@ -16,7 +16,7 @@ function restore() {
 		enabled: true,
 		url: "",
 		terms: "",
-		refresh: "1000",
+		refresh: "",
 	}, function(items) {
 		document.getElementById("enabled").checked = items.enabled;
 		document.getElementById("url").value = items.url;
