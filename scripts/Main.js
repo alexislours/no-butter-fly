@@ -2,6 +2,7 @@
 
 var url = "";
 var terms = "";
+var refresh = "";
 
 function replace() {
 	var images = document.getElementsByTagName("img");
@@ -20,11 +21,13 @@ chrome.storage.sync.get({
 	enabled: true,
 	url: "",
 	terms: "",
+	refresh: 1000,
 }, function (items) {
 	if (items.enabled) {
 		url = items.url;
 		terms = items.terms.split(",");
+		refresh = items.refresh;
 		replace();
-		window.setInterval(replace, 3000);
+		window.setInterval(replace, +refresh);
 	}
 });

@@ -4,7 +4,8 @@ function save() {
 	chrome.storage.sync.set({
 		enabled: document.getElementById("enabled").checked,
 		url: document.getElementById("url").value,
-		terms: document.getElementById("terms").value.toLowerCase()
+		terms: document.getElementById("terms").value.toLowerCase(),
+		refresh: document.getElementById("refresh").value,
 	}, function() {
 		document.getElementById("submit").value = "Saved";
 	});
@@ -15,10 +16,12 @@ function restore() {
 		enabled: true,
 		url: "",
 		terms: "",
+		refresh: "1000",
 	}, function(items) {
 		document.getElementById("enabled").checked = items.enabled;
 		document.getElementById("url").value = items.url;
 		document.getElementById("terms").value = items.terms;
+		document.getElementById("refresh").value = items.terms;
 	});
 }
 
@@ -40,3 +43,5 @@ document.getElementById("url").addEventListener("input", changed);
 document.getElementById("url").addEventListener("keyup", enter);
 document.getElementById("text").addEventListener("input", changed);
 document.getElementById("text").addEventListener("keyup", enter);
+document.getElementById("refresh").addEventListener("input", changed);
+document.getElementById("refresh").addEventListener("keyup", enter);

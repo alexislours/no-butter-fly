@@ -9,7 +9,7 @@ body {
 	width: 256px;
 }
 
-input[type="submit"], input[type="url"], input[type="text"]  {
+input[type="submit"], input[type="url"], input[type="text"], input[type="number"] {
 	box-sizing: border-box;
 	margin: 4px 0;
 	padding: 8px;
