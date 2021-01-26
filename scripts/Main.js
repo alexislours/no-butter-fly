@@ -24,7 +24,7 @@ chrome.storage.sync.get({
 	refresh: 1000,
 }, function (items) {
 	if (items.enabled) {
-		url = items.url;
+		url = items.url || "https://raw.githubusercontent.com/alexislours/no-butter-fly/master/icon.png";
 		terms = items.terms.split(",");
 		refresh = items.refresh;
 		replace();
