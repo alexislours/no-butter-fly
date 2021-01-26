@@ -7,9 +7,9 @@ var refresh = "";
 function replace() {
 	var images = document.getElementsByTagName("img");
 	for (var i = 0; i < images.length; i++) {
-		let alt = images[i].alt.toLocaleLowerCase();
-		let imgUrl = images[i].src.startsWith("data") ? "" : images[i].src.toLocaleLowerCase();
-		let srcUrl = images[i].srcset.startsWith("data") ? "" : images[i].srcset.toLocaleLowerCase();
+		let alt = images[i].alt.toLowerCase();
+		let imgUrl = images[i].src.startsWith("data") ? "" : images[i].src.toLowerCase();
+		let srcUrl = images[i].srcset.startsWith("data") ? "" : images[i].srcset.toLowerCase();
 		if (
 			new RegExp(terms.join("|")).test(alt) ||
 			new RegExp(terms.join("|")).test(imgUrl) ||
@@ -22,9 +22,11 @@ function replace() {
 
 	var sources = document.getElementsByTagName("source");
 	for (var i = 0; i < sources.length; i++) {
-		let imgUrl = sources[i].src.startsWith("data") ? "" : sources[i].src.toLocaleLowerCase();
-		let srcUrl = sources[i].srcset.startsWith("data") ? "" : sources[i].srcset.toLocaleLowerCase();
+		let alt = sources[i].alt?.toLowerCase();
+		let imgUrl = sources[i].src.startsWith("data") ? "" : sources[i].src.toLowerCase();
+		let srcUrl = sources[i].srcset.startsWith("data") ? "" : sources[i].srcset.toLowerCase();
 		if (
+			new RegExp(terms.join("|")).test(alt) ||
 			new RegExp(terms.join("|")).test(imgUrl) ||
 			new RegExp(terms.join("|")).test(srcUrl)
 		) {
