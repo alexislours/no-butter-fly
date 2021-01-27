@@ -17,9 +17,14 @@
 		<label for="enabled">Enabled</label>
 		<input id="all" type="checkbox">
 		<label for="all">Disable all images</label>
+		<br>
+		<br>
+		<label for="url">Image to replace with:</label>
 		<input id="url" type="url" placeholder="https://example.com/image.png">
-		<input id="terms" type="text" placeholder="Keywords separated by commas.">
-		<input id="refresh" type="number" placeholder="Refresh rate in milliseconds">
+		<label for="text">Keywords separated by commas:</label>
+		<input id="terms" type="text">
+		<label for="refresh">Refresh rate in ms (default 1000ms):</label>
+		<input id="refresh" type="number" placeholder="1000">
 		<input id="submit" type="submit" value="Save">
 		<script src="scripts/popup.js"></script>
 	</body>
