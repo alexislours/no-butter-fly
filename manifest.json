@@ -3,7 +3,7 @@
 	"description": "Extension that blocks images with specific keywords in their alt or url.",
 	"author": "Alexis LOURS",
 	"manifest_version": 2,
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"browser_action": {
 		"default_title": "No Butter Fly",
 		"default_popup": "index.html"
