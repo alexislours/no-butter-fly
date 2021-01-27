@@ -38,14 +38,17 @@ function replace() {
 
 chrome.storage.sync.get({
 	enabled: true,
+	all: false,
 	url: "",
 	terms: "",
 	refresh: 1000,
 }, function (items) {
 	if (items.enabled) {
 		url = items.url || "https://raw.githubusercontent.com/alexislours/no-butter-fly/master/icon.png";
-		terms = items.terms.split(",");
+		terms = items.terms.replace(/\s+/g,'').split(",");
 		refresh = items.refresh || "1000";
+		if (items.all) 
+			terms = [""];
 		replace();
 		window.setInterval(replace, +refresh);
 	}
