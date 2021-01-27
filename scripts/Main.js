@@ -21,7 +21,6 @@ function replace() {
 	}
 
 	let sources = document.getElementsByTagName("source");
-	console.log(sources)
 	for (let i = 0; i < sources.length; i++) {
 		let alt = sources[i].attributes.alt?.nodeValue?.toLowerCase();
 		let imgUrl = sources[i].src.startsWith("data") ? "" : sources[i].src.toLowerCase();
