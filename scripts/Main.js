@@ -5,8 +5,8 @@ var terms = "";
 var refresh = "";
 
 function replace() {
-	var images = document.getElementsByTagName("img");
-	for (var i = 0; i < images.length; i++) {
+	let images = document.getElementsByTagName("img");
+	for (let i = 0; i < images.length; i++) {
 		let alt = images[i].alt.toLowerCase();
 		let imgUrl = images[i].src.startsWith("data") ? "" : images[i].src.toLowerCase();
 		let srcUrl = images[i].srcset.startsWith("data") ? "" : images[i].srcset.toLowerCase();
@@ -20,9 +20,10 @@ function replace() {
 		}
 	}
 
-	var sources = document.getElementsByTagName("source");
-	for (var i = 0; i < sources.length; i++) {
-		let alt = sources[i].alt?.toLowerCase();
+	let sources = document.getElementsByTagName("source");
+	console.log(sources)
+	for (let i = 0; i < sources.length; i++) {
+		let alt = sources[i].attributes.alt?.nodeValue?.toLowerCase();
 		let imgUrl = sources[i].src.startsWith("data") ? "" : sources[i].src.toLowerCase();
 		let srcUrl = sources[i].srcset.startsWith("data") ? "" : sources[i].srcset.toLowerCase();
 		if (
