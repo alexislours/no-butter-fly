@@ -9,7 +9,10 @@ body {
 	width: 256px;
 }
 
-input[type="submit"], input[type="url"], input[type="text"], input[type="number"] {
+input[type="submit"],
+input[type="url"],
+input[type="text"],
+input[type="number"] {
 	box-sizing: border-box;
 	margin: 4px 0;
 	padding: 8px;
@@ -17,7 +20,7 @@ input[type="submit"], input[type="url"], input[type="text"], input[type="number"
 }
 
 input[type="submit"] {
-	background-color: #00AAFF;
+	background-color: #00aaff;
 	border: none;
 	color: white;
 	cursor: pointer;
@@ -25,9 +28,16 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-	background-color: #33BBFF;
+	background-color: #33bbff;
 }
 
 input[type="submit"]:active {
-	background-color: #0088CC;
+	background-color: #0088cc;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #303030;
+        color: white;
+    }
 }
